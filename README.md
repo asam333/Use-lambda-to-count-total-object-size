@@ -34,4 +34,30 @@ Lastly, expose a REST API from the plotting lambda so that it can be called sync
 ### steps
 - upload `plottingLambda.py` to lambda
 - Add Layers by:
-    -
+    - Copy the ARN for `maplablib` and `numpy `from [this link](https://github.com/keithrozario/Klayers/tree/master/deployments/python3.11), remember to use desinated python version
+    - Add them to the layer in lambda
+- Create an REST API resourse and deploy it to a stage to get an Invoke URL
+- Run Test from the resourse console
+
+## Part 4
+The driver lambda does the following:
+
+ -  Create object `assignment1.txt` TestBucket. The content of the object will be a string "Empty Assignment 1". (size: 19 bytes)
+
+ -  Update object `assignment1.txt` by updating its content to "Empty Assignment 2222222222" (size: 28 bytes)
+
+ -  Delete object `assignment1.txt` (size: 0)
+
+ -  Create object `assignment2.txt` in the bucket,. The content is a string "33" (size: 2 bytes)
+
+Sleep for some time between the operations, so that the dots in the plot won't be too close to each other.
+
+Lastly, call the API exposed for the plotting lambda.
+### steps
+- upload `driverLambda.py` to lambda
+- Test it, remember to set the run time longer to settle for 10s
+
+### Result
+
+
+
