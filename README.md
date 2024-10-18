@@ -58,6 +58,6 @@ Lastly, call the API exposed for the plotting lambda.
 - Test it, remember to set the run time longer to settle for 10s
 
 ### Result
-
+![plot](/plot.png)
 
 
